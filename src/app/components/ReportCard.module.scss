@@ -1,0 +1,102 @@
+.reportcard {
+	font-size: 10px;
+	font-family: "Arial", sans-serif;
+	margin: 0 auto;
+	padding: 20px;
+
+	&title {
+		text-align: center;
+		margin-bottom: 30px;
+		color: #333;
+	}
+
+	&grid {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.categorysection {
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		margin-bottom: 20px;
+		flex: 1;
+	}
+
+	.categoryheader {
+		display: grid;
+		grid-template-columns: 1fr 100px 1fr;
+		padding: 12px 15px;
+		color: #333;
+		font-weight: bold;
+
+		.categorytitle,
+		.gradinglabel,
+		.noteslabel {
+			text-align: left;
+		}
+	}
+
+	.skillrow {
+		display: grid;
+		grid-template-columns: 1fr 100px 1fr;
+		padding: 12px 15px;
+		border-bottom: 1px solid #eee;
+		background-color: #fff;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		.skillname {
+			color: #555;
+		}
+
+		.skillrating {
+			display: flex;
+			gap: 2px;
+		}
+
+		.skillnotes {
+			color: #666;
+			font-size: 0.95em;
+		}
+	}
+
+	.star {
+		font-size: 1.2em;
+
+		&.filled {
+			color: gold;
+			text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+		}
+
+		&.empty {
+			color: #ddd;
+		}
+	}
+
+	// Apply category-specific colors for stars
+
+	// Media queries for responsiveness
+	// @media (max-width: 1024px) {
+	// 	&grid {
+	// 		grid-template-columns: 1fr;
+	// 	}
+	// }
+
+	// @media (max-width: 600px) {
+	// 	.skillrow,
+	// 	.categoryheader {
+	// 		grid-template-columns: 1fr;
+	// 		grid-template-rows: auto auto auto;
+	// 		gap: 8px;
+	// 	}
+
+	// 	.skillnotes {
+	// 		grid-column: 1 / -1;
+	// 	}
+	// }
+}

@@ -1,0 +1,9 @@
+#node_modules
+node_modules/
+
+#Next.js build directory
+.next/
+
+.env 
+
+package-lock.json 
