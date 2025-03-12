@@ -1,8 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
-import styles from "./page.module.scss";
-import ReportCard from "../components/ReportCard";
+import styles from "./ConvertToPdf.module.scss";
+import ReportCard from "../ReportCard/ReportCard";
+import reportCardData from "../../data/data";
 
 export default function Convert() {
 	const contentRef = useRef();
@@ -16,11 +17,10 @@ export default function Convert() {
 
 			const element = contentRef.current;
 			const options = {
-				margin: 0.2,
 				filename: "my-document.pdf",
 				image: { type: "jpeg", quality: 0.98 },
 				html2canvas: { scale: 2 },
-				jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
+				jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
 			};
 
 			html2pdf().from(element).set(options).save();
@@ -35,7 +35,7 @@ export default function Convert() {
 		<div className={styles.container}>
 			<h1>Convert Page to PDF</h1>
 			<div ref={contentRef} className={styles.content}>
-				<ReportCard />
+				<ReportCard reportCardData={reportCardData} />
 			</div>
 			<button onClick={handleDownload} disabled={isLoading}>
 				{isLoading ? "Generating..." : "Download as PDF"}

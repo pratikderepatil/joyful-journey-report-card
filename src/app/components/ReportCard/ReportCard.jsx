@@ -1,8 +1,8 @@
+"use client";
 import React from "react";
-import reportCardData from "../data/data";
 import styles from "./ReportCard.module.scss";
 
-const ReportCard = () => {
+const ReportCard = ({ reportCardData }) => {
 	const renderStars = (rating) => {
 		const stars = [];
 		for (let i = 0; i < 3; i++) {
