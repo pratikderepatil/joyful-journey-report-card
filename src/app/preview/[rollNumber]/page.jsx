@@ -1,13 +1,25 @@
 "use client";
 
-import { useRef, useState } from "react";
-import styles from "./ConvertToPdf.module.scss";
-import ReportCard from "../ReportCard/ReportCard";
-import reportCardData from "../../data/data";
+import { useRef, useState, useEffect } from "react";
+import styles from "./page.module.scss";
+import { useParams } from "next/navigation";
+import ReportCard from "../../components/ReportCard/ReportCard";
 
-export default function Convert() {
+export default function Preview() {
+	const [reportData, setReportData] = useState(null);
+	const params = useParams();
+	console.log(params);
+
 	const contentRef = useRef();
 	const [isLoading, setIsLoading] = useState(false);
+
+	useEffect(() => {
+		if (rollNumber) {
+			const data = JSON.parse(localStorage.getItem("classroomData"));
+			const student = data?.classroom?.[0]?.[rollNumber];
+			setReportData(student);
+		}
+	}, [rollNumber]);
 
 	const handleDownload = async () => {
 		setIsLoading(true);
@@ -35,7 +47,7 @@ export default function Convert() {
 		<div className={styles.container}>
 			<h1>Convert Page to PDF</h1>
 			<div ref={contentRef} className={styles.content}>
-				<ReportCard reportCardData={reportCardData} />
+				<ReportCard reportCardData={reportData} />
 			</div>
 			<button onClick={handleDownload} disabled={isLoading}>
 				{isLoading ? "Generating..." : "Download as PDF"}

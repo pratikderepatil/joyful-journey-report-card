@@ -154,17 +154,6 @@ const reportCardData = {
 					rating: 3,
 					notes: "Displays the coordination to throw/roll well.",
 				},
-				{
-					name: "Can dress him/herself (i.e. button shirt)",
-					rating: 2,
-					notes:
-						"Sometimes struggles to dress himself properly, still requires assistance.",
-				},
-				{
-					name: "Can tie shoelaces",
-					rating: 2,
-					notes: "Jackson is getting better at his shoelace tying techniques.",
-				},
 			],
 		},
 	],

@@ -68,34 +68,11 @@
 		font-size: 1.2em;
 
 		&.filled {
-			color: gold;
 			text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 		}
 
 		&.empty {
-			color: #ddd;
+			color: #ddd !important;
 		}
 	}
-
-	// Apply category-specific colors for stars
-
-	// Media queries for responsiveness
-	// @media (max-width: 1024px) {
-	// 	&grid {
-	// 		grid-template-columns: 1fr;
-	// 	}
-	// }
-
-	// @media (max-width: 600px) {
-	// 	.skillrow,
-	// 	.categoryheader {
-	// 		grid-template-columns: 1fr;
-	// 		grid-template-rows: auto auto auto;
-	// 		gap: 8px;
-	// 	}
-
-	// 	.skillnotes {
-	// 		grid-column: 1 / -1;
-	// 	}
-	// }
 }
