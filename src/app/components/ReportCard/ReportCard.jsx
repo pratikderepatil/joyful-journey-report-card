@@ -28,7 +28,7 @@ const ReportCard = ({ reportCardData }) => {
 			</h1>
 
 			<div className={styles.reportcardgrid}>
-				{reportCardData?.categories.map((category, idx) => (
+				{reportCardData?.categories?.map((category, idx) => (
 					<div key={idx} className={styles.categorysection}>
 						<div
 							className={styles.categoryheader}

@@ -7,8 +7,7 @@ import ReportCard from "../../components/ReportCard/ReportCard";
 
 export default function Preview() {
 	const [reportData, setReportData] = useState(null);
-	const params = useParams();
-	console.log(params);
+	const { rollNumber } = useParams();
 
 	const contentRef = useRef();
 	const [isLoading, setIsLoading] = useState(false);
@@ -16,10 +15,11 @@ export default function Preview() {
 	useEffect(() => {
 		if (rollNumber) {
 			const data = JSON.parse(localStorage.getItem("classroomData"));
-			const student = data?.classroom?.[0]?.[rollNumber];
+			const student = data?.find((ele) => ele.studentRollNumber == rollNumber);
 			setReportData(student);
 		}
 	}, [rollNumber]);
+	console.log(reportData);
 
 	const handleDownload = async () => {
 		setIsLoading(true);

@@ -2,73 +2,92 @@
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
-import styles from "./ReportCardForm.module.scss";
+import styles from "./page.module.scss";
 import reportCardData from "../../data/data";
 
 const ReportCardForm = () => {
 	const { rollNumber } = useParams();
 	const router = useRouter();
 	const [formData, setFormData] = useState(null);
+	const [studentData, setStudentData] = useState([]);
 
 	useEffect(() => {
-		if (rollNumber) {
-			const classroomData = JSON.parse(localStorage.getItem("classroomData"));
-
-			if (classroomData && classroomData.classroom) {
-				const studentData = classroomData.classroom.find(
-					(entry) => entry[rollNumber]
-				);
-				if (studentData) {
-					setFormData(studentData[rollNumber]);
-				}
-			}
-
-			if (!formData) {
-				setFormData({
-					studentName: "",
-					studentRollNumber: rollNumber,
-					categories: reportCardData.categories,
-				});
-			}
+		const classroomData = JSON.parse(localStorage.getItem("classroomData"));
+		if (rollNumber && classroomData) {
+			setStudentData(
+				classroomData.find((entry) => entry.studentRollNumber === rollNumber) ||
+					[]
+			);
 		}
 	}, [rollNumber]);
+
+	useEffect(() => {
+		if (studentData.length === 0) {
+			setFormData({
+				studentName: "",
+				studentRollNumber: rollNumber,
+				studentClass: "",
+				categories: [],
+			});
+		} else {
+			setFormData(studentData);
+		}
+	}, [studentData]);
+	useEffect(() => {
+		if (formData && formData.studentClass) {
+			const classroomCategories =
+				reportCardData[formData.studentClass]?.categories;
+			if (classroomCategories) {
+				setFormData((prevFormData) => ({
+					...prevFormData,
+					categories: classroomCategories,
+				}));
+			}
+		}
+	}, [formData?.studentClass]);
 
 	const handleInputChange = (e, categoryIndex, skillIndex, field) => {
 		const value = e.target.value;
 		const updatedCategories = [...formData.categories];
 
-		if (field === "rating") {
-			updatedCategories[categoryIndex].skills[skillIndex].rating =
-				parseInt(value);
-		} else if (field === "notes") {
-			updatedCategories[categoryIndex].skills[skillIndex].notes = value;
+		if (categoryIndex !== null && skillIndex !== null) {
+			if (field === "rating") {
+				updatedCategories[categoryIndex].skills[skillIndex].rating =
+					parseInt(value);
+			} else if (field === "notes") {
+				updatedCategories[categoryIndex].skills[skillIndex].notes = value;
+			}
+		} else {
+			setFormData({
+				...formData,
+				[field]: value,
+			});
 		}
 
-		setFormData({
-			...formData,
-			categories: updatedCategories,
-		});
+		if (categoryIndex !== null && skillIndex !== null) {
+			setFormData({
+				...formData,
+				categories: updatedCategories,
+			});
+		}
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		const classroomData = {
-			classroom: [
-				{
-					[formData.studentRollNumber]: {
-						studentName: formData.studentName,
-						studentRollNumber: formData.studentRollNumber,
-						categories: formData.categories,
-					},
-				},
-			],
-		};
+		const classroomData = [
+			{
+				studentName: formData.studentName,
+				studentRollNumber: formData.studentRollNumber,
+				studentClass: formData.studentClass,
+				categories: formData.categories,
+			},
+		];
 
 		localStorage.setItem("classroomData", JSON.stringify(classroomData));
 
 		alert("Report card saved successfully!");
-		router.push(`/Preview/${formData.studentRollNumber}`);
+		router.push(`/preview/${formData.studentRollNumber}`);
 	};
 
 	if (!formData) {
@@ -103,8 +122,21 @@ const ReportCardForm = () => {
 							}
 							className={styles.nameInput}
 							required
-							disabled
 						/>
+					</label>
+					<label className={styles.nameLabel}>
+						Student Class:
+						<select
+							name="studentClass"
+							value={formData.studentClass}
+							onChange={(e) => handleInputChange(e, null, null, "studentClass")}
+							className={styles.nameInput}
+							required
+						>
+							<option value="">Select Class</option>
+							<option value="Lkg">LKG</option>
+							<option value="UkG">UKG</option>
+						</select>
 					</label>
 				</div>
 
