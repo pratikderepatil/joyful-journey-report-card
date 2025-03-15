@@ -16,8 +16,6 @@ const HomePage = () => {
 		}
 	}, []);
 
-	console.log(classroomData);
-
 	const handleEdit = (rollNumber) => {
 		router.push(`/form/${rollNumber}`);
 	};
@@ -34,17 +32,9 @@ const HomePage = () => {
 
 			if (studentExists) {
 				router.push(`/form/${newRollNumber}`);
-			} else {
-				alert("This roll number does not exist in the classroom data.");
 			}
-		} else {
-			alert("Please enter a roll number.");
 		}
 	};
-
-	if (!classroomData.length) {
-		return <div>Loading...</div>;
-	}
 
 	return (
 		<div className={styles.container}>
@@ -74,27 +64,35 @@ const HomePage = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{classroomData?.map((student) => (
-						<tr key={student.studentRollNumber}>
-							<td>{student.studentName}</td>
-							<td>{student.studentRollNumber}</td>
-							<td>{student.studentClass}</td>
-							<td>
-								<button
-									onClick={() => handleEdit(student.studentRollNumber)}
-									className={styles.editButton}
-								>
-									Edit
-								</button>
-								<button
-									onClick={() => handlePreview(student.studentRollNumber)}
-									className={styles.previewButton}
-								>
-									Preview
-								</button>
+					{classroomData?.length === 0 ? (
+						<tr>
+							<td colSpan="4" style={{ textAlign: "center" }}>
+								No data found
 							</td>
 						</tr>
-					))}
+					) : (
+						classroomData?.map((student) => (
+							<tr key={student.studentRollNumber}>
+								<td>{student.studentName}</td>
+								<td>{student.studentRollNumber}</td>
+								<td>{student.studentClass}</td>
+								<td>
+									<button
+										onClick={() => handleEdit(student.studentRollNumber)}
+										className={styles.editButton}
+									>
+										Edit
+									</button>
+									<button
+										onClick={() => handlePreview(student.studentRollNumber)}
+										className={styles.previewButton}
+									>
+										Preview
+									</button>
+								</td>
+							</tr>
+						))
+					)}
 				</tbody>
 			</table>
 		</div>

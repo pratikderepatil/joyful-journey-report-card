@@ -19,7 +19,6 @@ export default function Preview() {
 			setReportData(student);
 		}
 	}, [rollNumber]);
-	console.log(reportData);
 
 	const handleDownload = async () => {
 		setIsLoading(true);

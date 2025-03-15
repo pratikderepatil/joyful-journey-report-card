@@ -86,7 +86,6 @@ const ReportCardForm = () => {
 
 		localStorage.setItem("classroomData", JSON.stringify(classroomData));
 
-		alert("Report card saved successfully!");
 		router.push(`/preview/${formData.studentRollNumber}`);
 	};
 
