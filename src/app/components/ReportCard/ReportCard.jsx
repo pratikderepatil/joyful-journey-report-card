@@ -74,8 +74,8 @@ const ReportCard = ({ reportCardData }) => {
 				/>
 				<div className={styles.schoolInfo}>
 					<span className={styles.schoolName}>Joyful Journey PreSchool</span> •{" "}
-					<span>Hari Om Sadan, near Parande Nagar, Dighi, Pune</span> •{" "}
-					<span>77698 77787 / 77698 77797</span>
+					<span> Hari Om Sadan, Near Parande Nagar Bus Stop, Dighi, Pune</span>{" "}
+					• <span>77698 77787 / 77698 77797</span>
 				</div>
 			</div>
 		</React.Fragment>
