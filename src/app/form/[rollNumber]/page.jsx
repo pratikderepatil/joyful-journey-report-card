@@ -34,13 +34,20 @@ const ReportCardForm = () => {
 		}
 	}, [studentData]);
 	useEffect(() => {
-		if (formData && formData.studentClass) {
+		if (formData?.studentClass) {
 			const classroomCategories =
 				reportCardData[formData.studentClass]?.categories;
 			if (classroomCategories) {
 				setFormData((prevFormData) => ({
 					...prevFormData,
-					categories: classroomCategories,
+					categories: classroomCategories.map((category) => ({
+						...category,
+						skills: category.skills.map((skill) => ({
+							...skill,
+							rating: skill.rating || 0,
+							notes: skill.notes || "",
+						})),
+					})),
 				}));
 			}
 		}
@@ -95,6 +102,14 @@ const ReportCardForm = () => {
 
 	return (
 		<div className={styles.container}>
+			<button
+				type="button"
+				onClick={() => router.push("/")}
+				className={styles.backButton}
+			>
+				← Back
+			</button>
+
 			<h1 className={styles.pageTitle}>Student Report Card Form</h1>
 
 			<form onSubmit={handleSubmit} className={styles.form}>
@@ -133,13 +148,15 @@ const ReportCardForm = () => {
 							required
 						>
 							<option value="">Select Class</option>
-							<option value="Lkg">LKG</option>
-							<option value="UkG">UKG</option>
+							<option value="LKG">LKG</option>
+							<option value="UKG">UKG</option>
+							<option value="Nursery">Nursery</option>
+							<option value="Play Group">Play Group</option>
 						</select>
 					</label>
 				</div>
 
-				{formData.categories.map((category, categoryIndex) => (
+				{formData.categories?.map((category, categoryIndex) => (
 					<div
 						key={categoryIndex}
 						className={styles.categoryCard}

@@ -44,11 +44,21 @@ export default function Preview() {
 
 	return (
 		<div className={styles.container}>
-			<h1>Convert Page to PDF</h1>
+			<button
+				type="button"
+				onClick={() => router.push("/")}
+				className={styles.backButton}
+			>
+				← Back
+			</button>
 			<div ref={contentRef}>
 				<ReportCard reportCardData={reportData} />
 			</div>
-			<button onClick={handleDownload} disabled={isLoading}>
+			<button
+				className={styles.downloadButton}
+				onClick={handleDownload}
+				disabled={isLoading}
+			>
 				{isLoading ? "Generating..." : "Download as PDF"}
 			</button>
 		</div>

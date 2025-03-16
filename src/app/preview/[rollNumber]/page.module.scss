@@ -1,9 +1,8 @@
 .container {
 	text-align: center;
 	padding: 20px;
-	background-color: #f9f9f9;
 
-	button {
+	.downloadButton {
 		padding: 10px 20px;
 		background-color: #0070f3;
 		color: white;
@@ -13,9 +12,27 @@
 		border-radius: 5px;
 		margin-top: 20px;
 		transition: background-color 0.3s ease;
+		&:hover {
+			background-color: #005bb5;
+		}
 	}
+}
 
-	button:hover {
-		background-color: #005bb5;
+.backButton {
+	position: fixed;
+	top: 40px;
+	left: 40px;
+	background-color: #f0f0f0;
+	color: #333;
+	border: none;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 5px;
+	transition: background 0.2s ease-in-out;
+
+	&:hover {
+		background-color: #ddd;
 	}
 }

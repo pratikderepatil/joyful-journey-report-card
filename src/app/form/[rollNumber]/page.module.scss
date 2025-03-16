@@ -130,8 +130,8 @@
 
 .submitButton {
 	position: fixed;
-	top: 20px;
-	right: 20px;
+	top: 40px;
+	right: 40px;
 	border-radius: 6px;
 	font-weight: 500;
 	transition: background-color 0.2s ease;
@@ -141,9 +141,27 @@
 	border: none;
 	cursor: pointer;
 	font-size: 14px;
-	margin: 20px 0;
 	&:focus {
 		outline: none;
 		box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4);
+	}
+}
+
+.backButton {
+	position: fixed;
+	top: 40px;
+	left: 40px;
+	background-color: #f0f0f0;
+	color: #333;
+	border: none;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 5px;
+	transition: background 0.2s ease-in-out;
+
+	&:hover {
+		background-color: #ddd;
 	}
 }

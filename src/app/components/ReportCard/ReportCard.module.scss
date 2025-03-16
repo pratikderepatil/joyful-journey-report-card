@@ -17,6 +17,14 @@
 		flex-wrap: wrap;
 		margin-bottom: 20px;
 	}
+	.logoContainer {
+		width: 100%;
+		text-align: start;
+		margin: 0 30px 15px;
+		.logoImage {
+			width: 150px;
+		}
+	}
 
 	.label {
 		font-weight: bold;

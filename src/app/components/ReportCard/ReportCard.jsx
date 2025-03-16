@@ -24,6 +24,13 @@ const ReportCard = ({ reportCardData }) => {
 	return (
 		<React.Fragment>
 			<div className={styles.reportcard}>
+				<div className={styles.logoContainer}>
+					<img
+						className={styles.logoImage}
+						src="/Logo.png"
+						alt="background image"
+					/>
+				</div>
 				<div className={styles.studentHeader}>
 					<span className={styles.label}>Student:</span>{" "}
 					{reportCardData?.studentName} •
