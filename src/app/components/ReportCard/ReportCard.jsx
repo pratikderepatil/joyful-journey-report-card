@@ -32,7 +32,7 @@ const ReportCard = ({ reportCardData }) => {
 					/>
 				</div>
 				<div className={styles.studentHeader}>
-					<span className={styles.label}>Student:</span>{" "}
+					<span className={styles.label}>Name:</span>{" "}
 					{reportCardData?.studentName} •
 					<span className={styles.label}>Roll No.:</span>{" "}
 					{reportCardData?.studentRollNumber} •
@@ -75,7 +75,7 @@ const ReportCard = ({ reportCardData }) => {
 				<div className={styles.schoolInfo}>
 					<span className={styles.schoolName}>Joyful Journey PreSchool</span> •{" "}
 					<span>Hari Om Sadan, near Parande Nagar, Dighi, Pune</span> •{" "}
-					<span>+91 77698 777879</span>
+					<span>77698 77787 / 77698 77797</span>
 				</div>
 			</div>
 		</React.Fragment>
