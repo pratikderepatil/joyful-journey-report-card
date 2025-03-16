@@ -2,12 +2,13 @@
 
 import { useRef, useState, useEffect } from "react";
 import styles from "./page.module.scss";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import ReportCard from "../../components/ReportCard/ReportCard";
 
 export default function Preview() {
 	const [reportData, setReportData] = useState(null);
 	const { rollNumber } = useParams();
+	const router = useRouter();
 
 	const contentRef = useRef();
 	const [isLoading, setIsLoading] = useState(false);
