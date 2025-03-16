@@ -1,33 +1,48 @@
 .reportcard {
 	font-size: 10px;
 	font-family: "Arial", sans-serif;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	padding: 20px;
+	width: 100%;
+	background-color: white;
 
-	&title {
-		text-align: center;
-		margin-bottom: 30px;
+	.studentHeader {
+		justify-content: center;
+		font-size: 14px;
+		font-weight: 400;
 		color: #333;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+	}
+
+	.label {
+		font-weight: bold;
 	}
 
 	&grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		width: 100%;
 	}
 
 	.categorysection {
 		border-radius: 8px;
 		overflow: hidden;
+		background-color: #f9f9f9;
+		height: 100%;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		margin-bottom: 20px;
-		flex: 1;
+		flex: 1 calc(50% - 12px);
+		max-width: calc(50% - 12px);
 	}
 
 	.categoryheader {
 		display: grid;
-		grid-template-columns: 1fr 100px 1fr;
-		padding: 12px 15px;
+		grid-template-columns: 0.7fr 0.3fr 1fr;
+		padding: 8px 12px;
 		color: #333;
 		font-weight: bold;
 
@@ -40,10 +55,11 @@
 
 	.skillrow {
 		display: grid;
-		grid-template-columns: 1fr 100px 1fr;
-		padding: 12px 15px;
-		border-bottom: 1px solid #eee;
-		background-color: #fff;
+		grid-template-columns: 0.7fr 0.3fr 1fr;
+		background: #f9f9f9;
+		padding: 8px 12px;
+		border-bottom: 2px solid #eee;
+		text-align: left;
 
 		&:last-child {
 			border-bottom: none;
@@ -60,19 +76,53 @@
 
 		.skillnotes {
 			color: #666;
-			font-size: 0.95em;
 		}
 	}
 
 	.star {
-		font-size: 1.2em;
-
 		&.filled {
-			text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+			text-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
 		}
 
 		&.empty {
 			color: #ddd !important;
 		}
+	}
+}
+
+.schoolHeader {
+	background-color: white;
+	width: 100%;
+	color: #333;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 10px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+.schoolInfo {
+	.schoolName {
+		font-weight: bold;
+	}
+}
+
+.backgroundImage {
+	width: 100%;
+	height: auto;
+}
+@media (max-width: 768px) {
+	.reportcard {
+		padding: 10px;
+		&grid {
+			flex-direction: column;
+		}
+	}
+
+	.categorysection {
+		flex: 1 1 100%;
+		max-width: 100%;
 	}
 }

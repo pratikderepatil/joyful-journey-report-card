@@ -24,15 +24,11 @@ const HomePage = () => {
 		router.push(`/preview/${rollNumber}`);
 	};
 
-	const handleCreateForm = () => {
+	const handleCreateForm = (e) => {
+		e.preventDefault();
+		console.log(newRollNumber);
 		if (newRollNumber) {
-			const studentExists = classroomData.some(
-				(student) => student.studentRollNumber === newRollNumber
-			);
-
-			if (studentExists) {
-				router.push(`/form/${newRollNumber}`);
-			}
+			router.push(`/form/${newRollNumber}`);
 		}
 	};
 

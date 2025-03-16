@@ -202,11 +202,9 @@ const ReportCardForm = () => {
 					</div>
 				))}
 
-				<div className={styles.formActions}>
-					<button type="submit" className={styles.submitButton}>
-						Save Report Card
-					</button>
-				</div>
+				<button type="submit" className={styles.submitButton}>
+					Save Report Card
+				</button>
 			</form>
 		</div>
 	);

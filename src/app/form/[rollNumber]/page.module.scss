@@ -128,26 +128,20 @@
 	}
 }
 
-.formActions {
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 16px;
-}
-
 .submitButton {
-	padding: 10px 24px;
-	background-color: #4f46e5;
-	color: white;
-	border: none;
+	position: fixed;
+	top: 20px;
+	right: 20px;
 	border-radius: 6px;
 	font-weight: 500;
-	cursor: pointer;
 	transition: background-color 0.2s ease;
-
-	&:hover {
-		background-color: #4338ca;
-	}
-
+	background-color: #4caf50;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	margin: 20px 0;
 	&:focus {
 		outline: none;
 		box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.4);

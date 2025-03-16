@@ -28,7 +28,7 @@ export default function Preview() {
 
 			const element = contentRef.current;
 			const options = {
-				filename: "my-document.pdf",
+				filename: `${reportData.studentName}.pdf`,
 				image: { type: "jpeg", quality: 0.98 },
 				html2canvas: { scale: 2 },
 				jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
@@ -45,7 +45,7 @@ export default function Preview() {
 	return (
 		<div className={styles.container}>
 			<h1>Convert Page to PDF</h1>
-			<div ref={contentRef} className={styles.content}>
+			<div ref={contentRef}>
 				<ReportCard reportCardData={reportData} />
 			</div>
 			<button onClick={handleDownload} disabled={isLoading}>

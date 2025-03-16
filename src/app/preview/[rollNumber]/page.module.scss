@@ -1,6 +1,8 @@
 .container {
 	text-align: center;
 	padding: 20px;
+	background-color: #f9f9f9;
+
 	button {
 		padding: 10px 20px;
 		background-color: #0070f3;
@@ -16,9 +18,4 @@
 	button:hover {
 		background-color: #005bb5;
 	}
-}
-
-.content {
-	border: 1px solid #ccc;
-	background-color: #f9f9f9;
 }
