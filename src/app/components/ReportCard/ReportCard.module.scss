@@ -18,31 +18,11 @@
 	}
 	.logoContainer {
 		display: flex;
-		justify-content: space-between;
-		padding: 0 30px 15px;
+		justify-content: center;
+		padding: 0 30px 30px;
 
 		.logoImage {
-			width: 150px;
-		}
-		.schoolInfo {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-
-			gap: 10px;
-			.infoContainer {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				gap: 20px;
-				text-align: left;
-				img {
-					width: 20px;
-				}
-				span {
-					width: 100%;
-				}
-			}
+			width: 200px;
 		}
 	}
 
@@ -132,17 +112,4 @@
 .backgroundImage {
 	width: 100%;
 	height: auto;
-}
-@media (max-width: 768px) {
-	.reportcard {
-		padding: 10px;
-		&grid {
-			flex-direction: column;
-		}
-	}
-
-	.categorysection {
-		flex: 1 1 100%;
-		max-width: 100%;
-	}
 }

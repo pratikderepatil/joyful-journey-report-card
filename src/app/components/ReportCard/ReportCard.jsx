@@ -30,23 +30,6 @@ const ReportCard = ({ reportCardData }) => {
 						src="/Logo.png"
 						alt="background image"
 					/>
-					<div className={styles.schoolInfo}>
-						<div className={styles.infoContainer}>
-							<img src="/Location.png" alt="place-marker--v1" />
-							<span>
-								Hari Om Sadan, Near Parande
-								<br /> Nagar Bus Stop, Dighi, Pune
-							</span>
-						</div>
-						<div className={styles.infoContainer}>
-							<img src="/Phone.png" alt="place-marker--v1" />
-
-							<span>
-								+91 7769877787 <br />
-								+91 7769877797
-							</span>
-						</div>
-					</div>
 				</div>
 				<div className={styles.studentHeader}>
 					<span className={styles.label}>Name:</span>{" "}
