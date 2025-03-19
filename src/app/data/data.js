@@ -33,7 +33,7 @@ const reportCardData = {
 						name: "Understands feelings of others",
 					},
 					{
-						name: "Expresses remorse for causing harm/distress",
+						name: "Expresses remorse for causing harm",
 					},
 				],
 			},
@@ -42,7 +42,10 @@ const reportCardData = {
 				color: "#f8d14d",
 				skills: [
 					{
-						name: "Can recite the Alphabet",
+						name: "Can recite uppercase and lowercase alphabet",
+					},
+					{
+						name: "Can read three letter words",
 					},
 					{
 						name: "Can write beginning letter of the picture",
@@ -52,51 +55,31 @@ const reportCardData = {
 					},
 				],
 			},
-			{
-				name: "Color & Shapes",
-				color: "#a0d568",
-				skills: [
-					{
-						name: "Knows primary colors",
-					},
-					{
-						name: "Knows 5 different shapes",
-					},
-					{
-						name: "Understands textures",
-					},
-				],
-			},
+
 			{
 				name: "Numerics",
 				color: "#5bc8eb",
 				skills: [
 					{
-						name: "Can count from 1-20",
+						name: "Can count from 1-100",
 					},
 					{
-						name: "Can identify numbers",
+						name: "Knows number name 1-20",
 					},
 					{
-						name: "Can identify numbers of objects",
+						name: "Can identify number objects",
 					},
 				],
 			},
 			{
-				name: "Motor Skills",
-				color: "#c38ef5",
+				name: "Color & Shapes",
+				color: "#a0d568",
 				skills: [
 					{
-						name: "Can write with a pencil",
+						name: "Knows colors",
 					},
 					{
-						name: "Can use a crayon to draw shapes",
-					},
-					{
-						name: "Can use utensils to eat independently",
-					},
-					{
-						name: "Can roll/throw balls",
+						name: "Knows different shapes",
 					},
 				],
 			},
@@ -141,7 +124,7 @@ const reportCardData = {
 						notes: "",
 					},
 					{
-						name: "Expresses remorse for causing harm/distress",
+						name: "Expresses remorse for causing harm",
 						rating: "",
 						notes: "",
 					},
@@ -152,17 +135,17 @@ const reportCardData = {
 				color: "#f8d14d",
 				skills: [
 					{
-						name: "Can recite the Alphabet",
+						name: "Can read three letter words",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Can write beginning letter of the picture",
+						name: "Can read blending words",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Know the phonic sound of the letters",
+						name: "Knows the phonic sound",
 						rating: "",
 						notes: "",
 					},
@@ -173,17 +156,12 @@ const reportCardData = {
 				color: "#a0d568",
 				skills: [
 					{
-						name: "Knows primary colors",
+						name: "Knows colors",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Knows 5 different shapes",
-						rating: "",
-						notes: "",
-					},
-					{
-						name: "Understands textures",
+						name: "Knows different shapes",
 						rating: "",
 						notes: "",
 					},
@@ -194,43 +172,22 @@ const reportCardData = {
 				color: "#5bc8eb",
 				skills: [
 					{
-						name: "Can count from 1-20",
+						name: "Can count from 1-200",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Can identify numbers",
+						name: "Knows number names",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Can identify numbers of objects",
-						rating: "",
-						notes: "",
-					},
-				],
-			},
-			{
-				name: "Motor Skills",
-				color: "#c38ef5",
-				skills: [
-					{
-						name: "Can write with a pencil",
+						name: "Can add and subtract",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Can use a crayon to draw shapes",
-						rating: "",
-						notes: "",
-					},
-					{
-						name: "Can use utensils to eat independently",
-						rating: "",
-						notes: "",
-					},
-					{
-						name: "Can roll/throw balls",
+						name: "knows backward counting",
 						rating: "",
 						notes: "",
 					},
@@ -397,17 +354,17 @@ const reportCardData = {
 						notes: "",
 					},
 					{
-						name: "Expresses direct questions",
+						name: "Can communicate with teacher",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Uses new words upon learning them",
+						name: "Can understand the instructions",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Understands approaches to work",
+						name: "Can say poems",
 						rating: "",
 						notes: "",
 					},
@@ -423,17 +380,17 @@ const reportCardData = {
 						notes: "",
 					},
 					{
-						name: "Can express issues and concerns calmly",
+						name: "Can share things",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Understands feelings of others",
+						name: "Can understand feelings of others",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Expresses remorse for causing harm/distress",
+						name: "Expresses remorse for causing harm",
 						rating: "",
 						notes: "",
 					},
@@ -444,38 +401,43 @@ const reportCardData = {
 				color: "#f8d14d",
 				skills: [
 					{
-						name: "Can recite the Alphabet",
+						name: "Can identify letters",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Can write beginning letter of the picture",
+						name: "Can trace the letters",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Know the phonic sound of the letters",
+						name: "Can actively participate in the activities",
+						rating: "",
+						notes: "",
+					},
+					{
+						name: "Can do sticking work",
 						rating: "",
 						notes: "",
 					},
 				],
 			},
 			{
-				name: "Color & Shapes",
+				name: "Color & Painting",
 				color: "#a0d568",
 				skills: [
 					{
-						name: "Knows primary colors",
+						name: "Can do coloring",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Knows 5 different shapes",
+						name: "Can do sponge dabbing",
 						rating: "",
 						notes: "",
 					},
 					{
-						name: "Understands textures",
+						name: "Can do spray painting",
 						rating: "",
 						notes: "",
 					},
@@ -486,17 +448,17 @@ const reportCardData = {
 				color: "#5bc8eb",
 				skills: [
 					{
-						name: "Can count from 1-20",
-						rating: "",
-						notes: "",
-					},
-					{
-						name: "Can identify numbers",
+						name: "Can identify numbers 1-10",
 						rating: "",
 						notes: "",
 					},
 					{
 						name: "Can identify numbers of objects",
+						rating: "",
+						notes: "",
+					},
+					{
+						name: "Can sagregate same numbers",
 						rating: "",
 						notes: "",
 					},
@@ -507,12 +469,7 @@ const reportCardData = {
 				color: "#c38ef5",
 				skills: [
 					{
-						name: "Can write with a pencil",
-						rating: "",
-						notes: "",
-					},
-					{
-						name: "Can use a crayon to draw shapes",
+						name: "Can hold crayon ",
 						rating: "",
 						notes: "",
 					},

@@ -43,6 +43,7 @@
 		height: 100%;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 		flex: 1 calc(50% - 12px);
+		max-width: calc(50% - 12px);
 	}
 
 	.categoryheader {

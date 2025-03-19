@@ -82,16 +82,27 @@ const ReportCardForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		const classroomData = [
-			{
-				studentName: formData.studentName,
-				studentRollNumber: formData.studentRollNumber,
-				studentClass: formData.studentClass,
-				categories: formData.categories,
-			},
-		];
+		const existingData =
+			JSON.parse(localStorage.getItem("classroomData")) || [];
 
-		localStorage.setItem("classroomData", JSON.stringify(classroomData));
+		const studentIndex = existingData.findIndex(
+			(student) => student.studentRollNumber === formData.studentRollNumber
+		);
+
+		const newStudentData = {
+			studentName: formData.studentName,
+			studentRollNumber: formData.studentRollNumber,
+			studentClass: formData.studentClass,
+			categories: formData.categories,
+		};
+
+		if (studentIndex !== -1) {
+			existingData[studentIndex] = newStudentData;
+		} else {
+			existingData.push(newStudentData);
+		}
+
+		localStorage.setItem("classroomData", JSON.stringify(existingData));
 
 		router.push(`/preview/${formData.studentRollNumber}`);
 	};
